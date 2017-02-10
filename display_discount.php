@@ -1,8 +1,10 @@
 <?php
-	$product_description = (INPUT_POST, 'product_description');
-	$list_price = (INPUT_POST, 'list_price');
-	$discount_percent = (INPUT_POST, 'discount_percent');
+	$product_description = filter_input(INPUT_POST, 'product_description');
+	$list_price = filter_input(INPUT_POST, 'list_price');
+	$discount_percent = filter_input(INPUT_POST, 'discount_percent');
 
+        $discount = $list_price * $discount_percent * .01;
+        $discount_price = $list_price - $discount;
 ?>
 
 <!DOCTYPE html>
